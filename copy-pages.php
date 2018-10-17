@@ -47,9 +47,9 @@ panel()->routes(
             }
             if ($dest) {
                 if (get('uid')) {
-                    $destUid = get('uid');
+                    $destUid = \Str::slug(get('uid'));
                 } else {
-                    $destUid = $sourceUid;
+                    $destUid = \Str::slug($source->uid());
                 }
                 $destUri = $uri . $destUid;
                 $destUrl = $diruri . $destUid;
